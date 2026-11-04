@@ -1,0 +1,15 @@
+<!doctype html><html lang="nl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>D3D afvinklijst</title>
+<style>body{font:16px system-ui;margin:0 16px 40px}label{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #8884}input{width:24px;height:24px}.t{position:sticky;top:0;background:Canvas;padding:8px 0}</style>
+<div class="t"><h1>D3D afvinklijst</h1><label><input type="checkbox" id="f"> Alleen nog te kopen</label><b>Openstaand: €<span id="s">0,00</span></b></div><div id="l"></div><p id="e"></p>
+<script>
+var D=[],K='d3d-done',done={};
+try{done=JSON.parse(localStorage.getItem(K)||'{}')}catch(e){}
+function save(){try{localStorage.setItem(K,JSON.stringify(done))}catch(e){}}
+function draw(){var l=document.getElementById('l'),f=document.getElementById('f').checked,s=0;l.innerHTML='';
+D.forEach(function(x){if(!done[x.id])s+=x.prijs*(parseFloat(x.aantal)||1);if(f&&done[x.id])return;
+var lb=document.createElement('label'),c=document.createElement('input');c.type='checkbox';c.checked=!!done[x.id];
+c.onchange=function(){done[x.id]=c.checked;save();draw()};lb.appendChild(c);lb.appendChild(document.createTextNode(x.aantal+'× '+x.naam));l.appendChild(lb)});
+document.getElementById('s').textContent=s.toFixed(2).replace('.',',');
+document.getElementById('e').textContent=D.length?'':'Nog geen onderdelen: onderdelenlijst.csv is leeg.'}
+document.getElementById('f').onchange=draw;draw();
+</script></html>
