@@ -18,3 +18,10 @@ Geraadpleegd op 2026-11-04. Pagina's van de OSE-wiki konden **niet** worden geop
 ## Nog niet te beantwoorden
 Welke versie het recentst/best gedocumenteerd is, welke varianten (bouwvolume) bestaan, en welke basis te kiezen: **niet geverifieerd**. Eerste kandidaat om te onderzoeken: D3D Universal v20.07 (wiki + bouwgids).
 Ik heb de OSE-GitHub-repo's niet gekloond: de sessie heeft alleen toegang tot nealharpal0/Yes-.
+
+## Update 2026-11-04 (na toestemming gebruiker)
+GitHub-repo's waren via de git-proxy wel te klonen en zijn gelezen:
+- 3D-Printer-OSE-Marlin: README noemt twee firmwareversies (D3D v18.07: 0,4 mm nozzle + Prusa i3 MK2 extruder; Marlin: 0,6 mm nozzle + E3D Titan Aero). Configuration.h: RAMPS 1.4 (EFB), X/Y/Z max 175 mm, thermistor type 1, steps/mm E 161,3 (v18.07) resp. 408 (Titan). README verwijst naar https://wiki.opensourceecology.org/wiki/D3D. Licentie: Marlin GPL-3.0+ (bestandskoppen). Gekopieerd naar bestanden/firmware/.
+- D3D_v19.04: alleen 2 STL (5/6 carriages) + FreeCAD-heatbedmodellen, README leeg; geen licentie. Niet gekopieerd.
+- Volledig STL-pakket, BOM en bouwstappen staan dus **niet** in de GitHub-repo's; die zitten op de wiki (geblokkeerd).
+- Indicatie bouwvolume uit firmware: 175 x 175 x 175 mm (bouwvolume van de bestaande firmware, niet van de wiki-versie geverifieerd).
